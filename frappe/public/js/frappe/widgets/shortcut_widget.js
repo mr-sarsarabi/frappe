@@ -128,6 +128,7 @@ export default class ShortcutWidget extends Widget {
 		const color = COLOR_MAP[this.color] || "gray";
 		frappe.ui.badge({ label: __(label), theme: color }).appendTo(this.action_area);
 
-		$(frappe.utils.icon("arrow-up-right", "xs", "", "", "ml-2")).appendTo(this.action_area);
+		let icon_name = frappe.utils.is_rtl(frappe.boot.lang) ? "arrow-up-left" : "arrow-up-right";
+		$(frappe.utils.icon(icon_name, "xs", "", "", "ml-2")).appendTo(this.action_area);
 	}
 }
